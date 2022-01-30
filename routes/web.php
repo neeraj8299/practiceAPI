@@ -14,3 +14,12 @@
 $app->get('/', function () use ($app) {
     return $app->app->version();
 });
+
+$app->group([
+    'prefix' => 'v1'
+], function () use ($app) {
+    $app->post('login','v1\AuthenticateController@login');
+    $app->post('register','v1\AuthenticateController@register');
+    $app->post('send-otp','v1\AuthenticateController@sendOtp');
+    $app->post('update-password','v1\AuthenticateController@updatePassword');
+});
