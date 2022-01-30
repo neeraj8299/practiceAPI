@@ -73,7 +73,7 @@ $app->configure('app');
 */
 
 $app->middleware([
-    App\Http\Middleware\ExampleMiddleware::class
+    App\Http\Middleware\HeaderMiddleware::class
 ]);
 
 $app->routeMiddleware([
@@ -93,6 +93,7 @@ $app->routeMiddleware([
 
 $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 $app->register(App\Providers\EventServiceProvider::class);
 
 /*
