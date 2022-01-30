@@ -15,7 +15,7 @@ class HeaderMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->header('api_key') != env('API_KEY')) {
+        if ($request->header('apikey') != env('API_KEY')) {
             return response()->json([
                 'message' => 'Invalid Request'
             ], 500);
